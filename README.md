@@ -44,9 +44,3 @@ To train a deepfake voice detection model, you will need an appropriate dataset.
 ## Deployment
 You can deploy your deepfake voice detection model for real-time or batch processing applications. This can be done using cloud services, edge devices, or server applications.
 
-## References
-List any relevant papers, articles, or resources that you used during the project. Cite and give credit to any libraries or tools you used in your work.
-
-**Note:** Ensure that you handle deepfake technology responsibly and ethically, adhering to legal and ethical guidelines.
-
-Feel free to customize this README to suit your specific project needs. Provide clear and concise instructions to help users understand, use, and contribute to your deepfake voice detection project in Google Colab.
