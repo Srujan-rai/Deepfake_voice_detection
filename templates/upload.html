@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deepfake Detector</title>
+</head>
+<body>
+    <h1>Deepfake Image Detector</h1>
+    <form method="POST" enctype="multipart/form-data" action="/predict">
+        <input type="file" name="file" accept=".png, .jpg, .jpeg">
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    <img src="{{ image_path }}" width="300">
+    {% endif %}
+</body>
+</html>
