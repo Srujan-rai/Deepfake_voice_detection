@@ -20,7 +20,7 @@
             align-self: center;
             flex-direction: column;
             align-items: center;
-            row-gap: 30px;
+            row-gap: 25px;
             margin-top: 10%;
         }
 
@@ -29,6 +29,9 @@
             flex-direction: column;
             align-items: center;
             row-gap: 30px;
+            border: solid 1px white;
+            padding: 50px;
+            border-radius: 15px;
         }
 
         .prediction-result{
@@ -37,29 +40,28 @@
 
         .heading{
             color: #d6fffd;
+            margin-top: 80px;
 
         }
 
-        .file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
-.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
-.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
-.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
-.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
-.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
-.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
-.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
-.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
-.file-upload .file-select.file-select-disabled{opacity:0.65;}
-.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
-.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
-.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+        .predict-button{
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: rgb(43, 43, 255);
+            color: white;
+            /* font-weight: bold;
+            letter-spacing: 0.7px; */
+            border: none;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .predict-button:hover{
+            background-color: #3f3fff;
+            padding: 12px 32px 12px 32px;
 
-
-.predict-button{
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
- }
+        }
 
     </style>
 </head>
@@ -67,15 +69,7 @@
     <h1 class="heading">Deepfake Voice Detection</h1>
     <div class="content">
     <form class="form-div" method="POST" enctype="multipart/form-data" action="/predict">
-
-        <div class="file-upload">
-            <div class="file-select">
-              <div class="file-select-button" id="fileName">Choose File</div>
-              <div class="file-select-name" id="noFile">No file chosen...</div> 
-              <input type="file" name="chooseFile" id="chooseFile">
-            </div>
-          </div>
-
+        <input class="choose-file-button" type="file" name="file" accept=".png, .jpg, .jpeg">
         <input class="predict-button" type="submit" value="Predict">
     </form>
     {% if prediction %}
@@ -84,19 +78,5 @@
     {% endif %}
 
     </div>
-
-    <script>
-        $('#chooseFile').bind('change', function () {
-  var filename = $("#chooseFile").val();
-  if (/^\s*$/.test(filename)) {
-    $(".file-upload").removeClass('active');
-    $("#noFile").text("No file chosen..."); 
-  }
-  else {
-    $(".file-upload").addClass('active');
-    $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
-  }
-});
-    </script>
 </body>
 </html>
