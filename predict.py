@@ -5,7 +5,7 @@ from tensorflow import keras
 
 image_height=640
 image_width=480
-model = keras.models.load_model('deepfake_model.h5')
+model = keras.models.load_model("deepfake_model.h5")
 
 new_image_path = 'real/biden-original_segment_1_waveform.png'
 img = image.load_img(new_image_path, target_size=(image_height, image_width))
