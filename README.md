@@ -20,6 +20,7 @@ Before you begin, ensure you have the following installed:
 - Python 3.x
 - Jupyter Notebook
 - Google Colab account (for cloud GPU resources)
+- pycharm
 
 ## Getting Started
 1. Clone this repository to your local machine or open it directly in Google Colab.
