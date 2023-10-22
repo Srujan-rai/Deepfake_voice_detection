@@ -45,3 +45,6 @@ To train a deepfake voice detection model, you will need an appropriate dataset.
 ## Deployment
 You can deploy your deepfake voice detection model for real-time or batch processing applications. This can be done using cloud services, edge devices, or server applications.
 
+Clone the repo 
+then go to the respective directory and type python app.py
+in the terminal you will get the local host link
