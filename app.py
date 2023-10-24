@@ -15,7 +15,7 @@ image_width = 480
 def process_image(file):
     filename = secure_filename(file.filename)
     file_path = os.path.join('uploads', filename)
-    file.save(file_path) 
+    file.save(file_path)
     img = image.load_img(file_path, target_size=(image_height, image_width))
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
