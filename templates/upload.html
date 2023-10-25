@@ -4,20 +4,17 @@
     <title>Deepfake Detector</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body style="background-image: url('{{ url_for('static', filename='images/bc2.jpg') }}'); background-size: cover; background-position: 0 -120px;">
     <h1 class="heading">Deepfake Voice Detection</h1>
     <div class="content">
-    <form class="form-div" method="POST" enctype="multipart/form-data" action="/predict">
-        <input class="choose-file-button" type="file" name="file" accept=".png, .jpg, .jpeg">
-        <input class="predict-button" type="submit" value="Predict">
-    </form>
-    {% if prediction %}
-    <h2 class="prediction-result">Prediction: {{ prediction }}</h2>
-
-    {% endif %}
-
+        <form class="form-div" method="POST" enctype="multipart/form-data" action="/predict">
+            <input class="choose-file-button" type="file" name="file" accept=".png, .jpg, .jpeg">
+            <input class="predict-button" type="submit" value="Predict">
+        </form>
+        {% if prediction %}
+        <h2 class="prediction-result">Prediction: {{ prediction }}</h2>
+        {% endif %}
     </div>
-
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
