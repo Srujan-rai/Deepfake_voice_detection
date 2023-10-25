@@ -9,7 +9,7 @@
             flex-direction: column;
             align-items: center;
             font-family: Arial;
-            background-image: url("pexels-cátia-matos-1072179.jpg");
+            background-image: url("{{ url_for('static', filename='images/bc2.jpg') }}");
             background-size: cover;
             background-position: 0 -120px;
             color: #000000;
@@ -36,6 +36,7 @@
 
         .prediction-result{
             padding-top: 80px;
+            color:#FFFFFF;
         }
 
         .heading{
