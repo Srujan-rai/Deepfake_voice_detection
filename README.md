@@ -47,4 +47,4 @@ You can deploy your deepfake voice detection model for real-time or batch proces
 
 Clone the repo 
 then go to the respective directory and type python app.py
-in the terminal you will get the local host link
+in the terminal you will get the local host link.
