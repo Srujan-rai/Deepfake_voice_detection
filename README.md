@@ -36,7 +36,7 @@ To train a deepfake voice detection model, you will need an appropriate dataset.
 
 ## Inference
 - Once your model is trained, use it for inference by following the notebook's instructions.
-- You can perform deepfake voice detection on audio files or streams.
+- You can perform deepfake voice detection on audio files or streams....
 
 ## Evaluation
 - Evaluate your model's performance using metrics such as accuracy, precision, recall, and F1-score.
